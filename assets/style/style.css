@@ -1,0 +1,132 @@
+:root {
+    --basecolor: #fff;
+}
+
+/*  Font and universal declarations  */
+* {
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Header layout and design */
+header {
+    background-color: lightgrey;
+
+    /*force element to always show, and be on top */
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    z-index: 10;
+
+    /* Flex for Nav display */
+    display: flex; 
+    align-items: center;
+
+    /*make this more readable - gap the sides*/
+    padding: 0 1rem;
+}
+
+/*Nav Declarations */
+nav { 
+    margin-left: auto;
+    display:flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+nav a:hover {
+    background-color: grey;
+}
+
+/* set values for relative declarations - margin top to avoid the header*/
+main {
+    height:100%;
+    margin-top: 4rem;
+}
+
+p {
+    margin: 1em 0;
+}
+.section-end {
+    clear:both;
+}
+
+.central-aligned {
+    max-width: 70%;
+    margin: 3rem auto;
+    position: relative;
+}
+
+
+.side-title {
+    font-size: 200%;
+    position: absolute;
+    top: 2vh;
+    left: -5vw;
+    max-width: 4em;
+}
+
+#links {
+    clear: both;
+}
+
+
+.work-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 90vh;
+    width:100%;
+    margin:4vh auto;
+    justify-content: space-evenly;
+    clear: both;
+    
+}
+
+.work-card {
+    margin:1%;
+    border: solid;
+    position: relative;
+    width: auto;
+    max-height: calc(100vh / 2.5);
+    overflow:hidden;
+    flex-basis: 30%;
+}
+
+.work-section .work-card:first-of-type {
+    justify-content: stretch;
+    flex: 0 0 96%;
+}
+
+
+.work-card img {
+    width: 100%;
+    height: auto;
+}
+
+
+.work-card figure figcaption {
+    position: absolute;
+    bottom: .5rem;
+    padding-left: .3em;
+}
+
+.profile-image {
+    float:left;
+    margin: 1em;
+}
+
+.links-list {
+    display:flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 1rem;
+}
+
