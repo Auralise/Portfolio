@@ -13,14 +13,14 @@ header {
     background-color: lightgrey;
 
     /*force element to always show, and be on top */
-    position:fixed;
+    position: fixed;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     z-index: 10;
 
     /* Flex for Nav display */
-    display: flex; 
+    display: flex;
     align-items: center;
 
     /*make this more readable - gap the sides*/
@@ -28,9 +28,9 @@ header {
 }
 
 /*Nav Declarations */
-nav { 
+nav {
     margin-left: auto;
-    display:flex;
+    display: flex;
     justify-content: flex-end;
     height: 100%;
 }
@@ -47,23 +47,34 @@ nav a:hover {
 
 /* set values for relative declarations - margin top to avoid the header*/
 main {
-    height:100%;
+    height: 100%;
     margin-top: 4rem;
 }
 
 p {
     margin: 1em 0;
 }
+
+section {
+    border-left: solid #000;
+}
+
 .section-end {
-    clear:both;
+    clear: both;
 }
 
-.central-aligned {
-    max-width: 70%;
-    margin: 3rem auto;
-    position: relative;
+
+
+.side-title {
+    float: left;
+    height: 100%;
+    padding: 1em;
+
 }
 
+
+
+/* ?? - TODO Workout what to do about this titling - Not a fan of how it currently works.
 
 .side-title {
     font-size: 200%;
@@ -71,11 +82,13 @@ p {
     top: 2vh;
     left: -5vw;
     max-width: 4em;
-}
+}*/
 
 #links {
     clear: both;
+    border: none;
 }
+
 
 
 .work-section {
@@ -83,20 +96,20 @@ p {
     flex-wrap: wrap;
     flex-direction: row;
     height: 90vh;
-    width:100%;
-    margin:4vh auto;
+    width: 100%;
+    margin: 4vh auto;
     justify-content: space-evenly;
     clear: both;
-    
+
 }
 
 .work-card {
-    margin:1%;
+    margin: 1%;
     border: solid;
     position: relative;
     width: auto;
     max-height: calc(100vh / 2.5);
-    overflow:hidden;
+    overflow: hidden;
     flex-basis: 30%;
 }
 
@@ -116,17 +129,128 @@ p {
     position: absolute;
     bottom: .5rem;
     padding-left: .3em;
+    border: darkgrey solid;
 }
 
 .profile-image {
-    float:left;
+    float: left;
     margin: 1em;
 }
 
 .links-list {
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
     align-content: center;
     margin: 1rem;
 }
 
+
+
+/* Contact form */
+.form-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: .5em;;
+}
+
+.form-list>li>label {
+    flex: 1 0 120px;
+    max-width: 220px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1em;
+}
+
+.form-list>li>label+* {
+    flex: 1 0 220px;
+}
+
+.form-list li button {
+    margin: .5em auto;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    border-radius: 2px;
+}
+
+
+#about {
+    padding: 1em;
+}
+
+/* full screen */
+@media screen and (min-width:768px) {
+    .central-aligned {
+        max-width: 70%;
+        margin: 3rem auto;
+        position: relative;
+    }
+}
+
+/*Tablet screen */
+@media screen and (max-width: 768px) {
+    * {
+        font-size: 18px;
+    }
+
+    .central-aligned {
+        width:90%;
+        margin: 3rem auto;
+        position: relative;
+    }
+
+    /* TODO: Remove borders on side and work out the following - Individually commented so they can be uncommented easily */
+
+    /* nav {
+        Clear and put on new line - Horizontal is okay and it can remain fixed (talk to instructor??)
+    } */
+
+    /* .side-title {
+
+    } */
+
+    /* .work-section {
+
+    } */
+
+    /* .work-card {
+
+    } */
+    
+}
+
+
+/*Phone Portrait only*/
+@media screen and (max-width: 481px) {
+    * {
+        font-size: 20px;
+    }
+
+    .central-aligned {
+        width:90%;
+        margin: 3rem auto;
+        position: relative;
+    }
+    /* TODO: Remove borders on side and work out the following - Individually commented so they can be uncommented easily */
+
+    /* nav {
+        stack vertically and make it not fixed
+    } */
+
+    /* .side-title {
+
+    } */
+
+    /* .work-section {
+
+    } */
+
+    /* .work-card {
+
+    } */
+}
