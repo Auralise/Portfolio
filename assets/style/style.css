@@ -1,12 +1,20 @@
 :root {
     --basecolor: #fff;
+    --background-color: lightgrey;
+    --font-color-primary: #000;
+    --font-colour-contrast: #aaa; /*unsure if needed */
 }
 
 /*  Font and universal declarations  */
 * {
     font-size: 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+h1, h2 {
+    font-size: 150%;
+}
+
 
 /* Header layout and design */
 header {
@@ -55,10 +63,6 @@ p {
     margin: 1em 0;
 }
 
-section {
-    border-left: solid #000;
-}
-
 .section-end {
     clear: both;
 }
@@ -66,23 +70,12 @@ section {
 
 
 .side-title {
-    float: left;
     height: 100%;
     padding: 1em;
 
 }
 
 
-
-/* ?? - TODO Workout what to do about this titling - Not a fan of how it currently works.
-
-.side-title {
-    font-size: 200%;
-    position: absolute;
-    top: 2vh;
-    left: -5vw;
-    max-width: 4em;
-}*/
 
 #links {
     clear: both;
@@ -133,20 +126,37 @@ section {
 }
 
 .profile-image {
-    float: left;
-    margin: 1em;
+    float:left;
+    margin: 1em 5em;
+    height: 250px;
+    width:auto;
+    border: 2px #999;
+    border-style: solid;
+    border-radius: 50%;
+    box-shadow: 10px 5px 10px #555;
 }
 
+
+/* links list */
 .links-list {
     display: flex;
+    flex-direction:column;
     justify-content: space-evenly;
-    align-content: center;
-    margin: 1rem;
+    height:100%;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2.5%;
+}
+
+.links-list>li{
+    flex:45%;
 }
 
 
+.form-list {
+    padding: 2rem;
+}
 
-/* Contact form */
 .form-list li {
     display: flex;
     flex-wrap: wrap;
@@ -157,9 +167,9 @@ section {
 
 .form-list>li>label {
     flex: 1 0 120px;
-    max-width: 220px;
+    max-width: 180px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-right: 1em;
 }
 
@@ -171,17 +181,56 @@ section {
     margin: .5em auto;
     padding: 8px 16px;
     border: none;
-    background: #333;
-    color: #f2f2f2;
+    background: darkgrey;
+    color: #FFF;
     text-transform: uppercase;
     letter-spacing: 0.09em;
     border-radius: 2px;
+}
+
+/* two column layout */
+.row {
+    display: flex;
+    
+}
+.column {
+    flex:50%;
+    padding: 2rem;
+}
+
+/*Footer*/
+footer {
+    padding: 2rem;
+    width:100;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
 }
 
 
 #about {
     padding: 1em;
 }
+
+#about >h2 {
+    text-align: center;
+}
+
+#links >h2, #links >p {
+    text-align: center;
+}
+
+
+#contact > h2 {
+    text-align: center;
+}
+
+.links-list img {
+    height:50px;
+    width:auto;
+}
+
 
 /* full screen */
 @media screen and (min-width:768px) {
@@ -202,6 +251,9 @@ section {
         width:90%;
         margin: 3rem auto;
         position: relative;
+    }
+    #about>p {
+        clear:both;
     }
 
     /* TODO: Remove borders on side and work out the following - Individually commented so they can be uncommented easily */
@@ -235,6 +287,10 @@ section {
         width:90%;
         margin: 3rem auto;
         position: relative;
+    }
+
+    #about>p {
+        clear:both;
     }
     /* TODO: Remove borders on side and work out the following - Individually commented so they can be uncommented easily */
 

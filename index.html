@@ -25,42 +25,33 @@
 
     <main>
 
-        <div class="side-title">
-            <h2>About Me</h2>
-        </div>
+
         <section id="about" class="central-aligned">
+            <h2>About Me</h2>
 
-            <img src="https://via.placeholder.com/350.png" alt="Image of James Prince" class="profile-image">
+            <img src="./assets/images/the-Lemon.png" alt="Image of James Prince" class="profile-image">
+            <article class="text-container">
+                <p>
+                    My name is James Prince and I am currently working to become a fullstack web developer.
+                </p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras finibus odio pretium, dignissim arcu a,
-                tincidunt enim. Quisque non eros ante. Vestibulum venenatis eu leo sit amet feugiat. Pellentesque a
-                molestie sapien, quis scelerisque ligula. Donec varius maximus auctor. Vestibulum elementum, lectus
-                vitae efficitur porta, enim quam vulputate justo, faucibus varius orci lectus at augue. Sed sollicitudin
-                diam eu magna volutpat convallis id quis urna. Aenean massa neque, ultricies in lorem eu, feugiat
-                posuere libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus vulputate
-                placerat. Aliquam erat volutpat. Mauris consectetur neque et ligula sodales, nec placerat eros
-                scelerisque. Nunc consectetur fringilla blandit. Proin sollicitudin ornare odio. Sed eu lectus eu lorem
-                convallis rutrum. Integer commodo eu magna at vehicula.</p>
+                <p>
+                    Previously, I have worked in the IT support world as a sysadmin for a number of managed services
+                    providers which gives me a unique technical skillset and insight from both development as well as the
+                    various operational and business challenges that inevitably arise in implementation.
+                </p>
 
-            <p>Donec a elit tincidunt, pulvinar urna vitae, consectetur diam. Fusce viverra justo non lorem porta, sed
-                semper ipsum viverra. Fusce ullamcorper tortor vitae libero mollis, a condimentum diam mollis. Ut quis
-                nunc tristique, commodo magna id, facilisis nibh. Donec sollicitudin sapien a justo posuere, nec aliquet
-                purus commodo. Integer a quam sit amet dolor commodo dignissim. Mauris scelerisque erat sed lorem
-                pellentesque rhoncus. Proin tempus leo et metus semper, id tristique odio pulvinar. Pellentesque et
-                felis vel ipsum rhoncus pulvinar ut ut urna. Sed dui felis, scelerisque in ligula sed, auctor
-                pellentesque nulla. Nulla egestas tempor urna non blandit. Proin mattis orci eu lacus tristique mattis.
-                Nam vestibulum, felis vel pellentesque elementum, urna leo vehicula erat, nec pellentesque justo lacus
-                quis augue. Praesent nec tortor lacinia, aliquam dolor nec, posuere metus. </p>
+                <p>
+                    I am looking forward to expanding my development skillset to truly become a well-rounded technology
+                    professional.
+                </p>
+            </article>
 
         </section>
 
-        <hr class="section-end">
-
-        <div class="side-title">
-            <h2>Work Samples</h2>
-        </div>
 
         <section id="work-container" class="central-aligned work-section">
+            <h2>Work Samples</h2>
 
 
             <article class="work-card">
@@ -101,52 +92,59 @@
             </article>
         </section>
 
-        <hr>
-
-
-        <section id="links" class="central-aligned">
-            <h2>Links</h2>
-            <ul class="links-list">
-                <li>
-                    <a href="https://github.com/auralise">Github</a>
-                </li>
-                <li>
-                    <a href="https://dev.to">dev.to</a>
-                </li>
-                <li>
-                    <a href="https://spotify.com">Spotify</a>
-                </li>
-            </ul>
-
-        </section>
-
-        <h2 class="side-title">Contact Me</h2>
-        <section id="contact" class="central-aligned form-container">
-
-            <form action="" id="contact-form">
-                <ul class="form-list">
+        <section class="row central-aligned">
+            <section id="links" class="column">
+                <h2>Links</h2>
+                <p>Here are some links pertinent to me and my interests</p>
+                <ul class="links-list">
                     <li>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name">
+                        <a href="https://github.com/auralise"><img src="assets/images/GitHub_Logo.png" alt="Github Logo"></a>
+                        <!--Github logo used in accordance with brand guidelines: https://github.com/logos -->
                     </li>
                     <li>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email">
+                        <a href="https://dev.to"><img src="assets/images/dev.png"></a>
+                        <!--dev.to logo used in accordance with brand guidelines: https://dev.to/brand-->
                     </li>
                     <li>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="5"></textarea>
+                        <a href="https://open.spotify.com/user/auralise185?si=cae6af32c41b4df2"><img src="assets/images/Spotify_Logo_CMYK_Green.png" ></a>
                     </li>
                     <li>
-                        <button type="submit">Send</button>
+
                     </li>
+
                 </ul>
-            </form>
+
+            </section>
+
+            <section id="contact" class="column">
+                <h2>Contact Me</h2>
+
+                <form action="" id="contact-form">
+                    <ul class="form-list">
+                        <li>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name">
+                        </li>
+                        <li>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email">
+                        </li>
+                        <li>
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </li>
+                        <li>
+                            <button type="submit">Send</button>
+                        </li>
+                    </ul>
+                </form>
+            </section>
         </section>
+
     </main>
 
     <footer>
-        <h2>&copy; James Prince 2022</h2>
+        <h3>Designed and Maintained by James Prince 2022 &copy;</h3>
     </footer>
 </body>
 
