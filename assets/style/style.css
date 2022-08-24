@@ -5,17 +5,28 @@
     --font-colour-contrast: #aaa;
     /*unsure if needed */
     --background-color-transp: rgba(211, 211, 211, 0.9);
+    --background-hover: grey;
     --transition-time: 500ms;
+    --transition-time-long: 1000ms;
+    --central-channel: 60%;
+
 }
 
 /*  Font and universal declarations  */
 * {
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
-h1,
+h1 {
+    font-weight: 700;
+    font-size: 175%;
+}
+
+
 h2 {
+    font-weight: 500;
     font-size: 150%;
 }
 
@@ -33,6 +44,7 @@ h2 {
     margin: 2rem;
     justify-content: center;
     align-items: center;
+    transition: var(--transition-time-long) ease;
 }
 
 
@@ -46,13 +58,15 @@ header {
     left: 0;
     width: 100%;
     z-index: 10;
+}
 
-    /* Flex for Nav display */
+#header-content
+{
+    width: var(--central-channel);
     display: flex;
     align-items: center;
+    margin: 0 auto;
 
-    /*make this more readable - gap the sides*/
-    padding: 0 1rem;
 }
 
 /*Nav Declarations */
@@ -71,7 +85,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: grey;
+    background-color: var(--background-hover);
 }
 
 /* set values for relative declarations - margin top to avoid the header*/
@@ -88,26 +102,36 @@ p {
 
 /* Work Examples section */
 .work-section {
+    margin-top: 10rem;
+}
+
+.work-examples {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     width: 100%;
-    margin: 4vh auto;
+    margin: auto;
     padding: 2rem;
     justify-content: space-evenly;
     clear: both;
+    max-height: 800px;
 
+}
+.work-section>h2 {
+    flex:100%;
+    margin-left: auto;
+    text-align: center;
 }
 
 .work-card {
-    margin: 1%;
-    border: solid;
+    margin: .5%;
     position: relative;
-    width: auto;
-    height: auto;
+    /* width: auto;
+    height: auto; */
     overflow: hidden;
-    flex: 0 1 content;
+    flex: 1 2 content;
     transition: var(--transition-time);
+    max-height: 200px;
 }
 
 .work-card:hover {
@@ -116,8 +140,9 @@ p {
 }
 
 /* make the first one big */
-.work-section .work-card:first-of-type {
-    flex: 0 1 96%;
+.work-examples .work-card:first-of-type {
+    flex: 5 1 50%;
+    
 }
 
 
@@ -136,7 +161,7 @@ p {
     position: absolute;
     bottom: .5rem;
     padding: .4rem;
-    border: darkgrey solid;
+    /* border: darkgrey solid; */
     background: var(--background-color-transp);
 }
 
@@ -144,38 +169,54 @@ p {
     padding: .5rem 0;
 }
 
+#about-container {
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .profile-image {
-    margin: 1em auto;
-    width: 150px;
+    /* float: left;
+    margin-left: 5%;
+    margin-bottom: 5%; */
+    width: 20vw;
+    max-width: 200px;
     height: auto;
-    border: 2px #999;
+    border: 1px #999;
     border-style: solid;
     border-radius: 50%;
     box-shadow: 10px 5px 10px #555;
-    flex: 150px;
+    flex: 1 1 20%;
 }
  
 /* !!!!! MOVE ME !!!!! */
 #about {
-    padding: 1em;
+    padding: 2rem;
+    
 }
 
-#about>h2 {
+#about h2 {
     text-align: center;
 }
 
-#about-text {
-    margin: auto;
-    flex: 60%;
-}
+#about-text { 
+    /* margin-top: 3rem;
+    margin-left: 30%; */
+    padding-left: 5%;
+    flex: 1 1 10%;
+    transition: var(--transition-time)
+} 
 
+ .page-split {
+    border: 1px rgb(165, 155, 155) ridge;
+    box-shadow: 5px 4px 2px #888;
+} 
 
 /* links list */
 .links-list {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
     flex-wrap: wrap;
     align-items: center;
     padding: 2.5%;
@@ -194,9 +235,9 @@ p {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: auto;
-    margin-bottom: .5em;
-    ;
+    
+    margin: 1em auto;
+    
 }
 
 .form-list>li>label {
@@ -227,7 +268,7 @@ p {
 /*Footer*/
 footer {
     padding: 2rem;
-    width: 100;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -248,20 +289,25 @@ footer {
 }
 
 .links-list img {
-    height: 70px;
-    /*to conform with spotify logo display guidelines https://developer.spotify.com/documentation/general/design-and-branding/#using-our-logo*/
+    max-height: 40px;
+    height: auto;
     width: auto;
+    max-width: 100%;
     margin: 20px;
-    /*to conform with spotify logo display guidelines*/
 }
 
 
 /* full screen */
 @media screen and (min-width:768px) {
     .central-aligned {
-        max-width: 80%;
+        max-width: var(--central-channel);
         margin: 1rem auto;
         position: relative;
+    }
+
+    /*hide menu button when not needed*/
+    #header-content img {
+        display:none;
     }
 }
 
@@ -278,28 +324,63 @@ footer {
         position: relative;
     }
 
-    #about>p {
-        clear: both;
+    #about-container {
+        justify-content: center;
     }
 
-    /* nav {
+    .profile-image {
+        margin: 2rem auto;
+    }
 
-    } */
+    #about-text {
+        flex: 100%;
+    }
 
-    /* TODO: Remove borders on side and work out the following - Individually commented so they can be uncommented easily */
+    #header-content {
+        flex-direction: row;
+        padding-top: 1rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-    /* nav {
-        Clear and put on new line - Horizontal is okay and it can remain fixed (talk to instructor??)
-    } */
+    #header-content>h1 {
+        padding-left:1rem;
+        flex: 1 1 50%
+    }
+
+    #header-content img {
+        /* height: auto; */
+        border-radius: 5px;
+        margin-left: auto;
+        flex:0 0;
+        margin-right: 1rem;
+    }
+
+    /* my intention with this is to make it a clickable "expand menu" element 
+    As I am unable to do this at the moment due to time constraints, I am leaving this note here*/
+    /* TODO make this hide/unhide the nav element */
+    #header-content img:hover {
+        /* height: auto; */
+        background-color: var(--background-hover);
+    }
 
 
-    /* .work-section {
+    nav {
+        flex: 1 0 100%;
+        /* flex-direction: column;  */
+        order: 3;
+        justify-content: center;
+     }
 
-    } */
+     nav>a {
+        text-align: center;
+     }
 
-    /* .work-card {
 
-    } */
+     
+
 
 }
 
@@ -310,31 +391,102 @@ footer {
         font-size: 20px;
     }
 
+    .column {
+        
+        margin:15px 0;
+        padding:0;
+    }
+    .form-list {
+        padding: 15px;
+    }
+
+    .links-list {
+        justify-content: flex-start;
+    }
+
+    .links-list li {
+        flex:0 1 30%;
+    }
+
     .central-aligned {
         width: 90%;
         margin: 1rem auto;
         position: relative;
     }
 
-    #about>p {
-        clear: both;
+    #about-container {
+        justify-content: center;
     }
 
-    /* TODO: Remove borders on side and work out the following - Individually commented so they can be uncommented easily */
+    .profile-image {
+        margin: 2rem auto;
+    }
 
-    /* nav {
-        stack vertically and make it not fixed
-    } */
+    #about-text {
+        flex: 100%;
+    }
 
-    /* .side-title {
+    #header-content {
+        flex-direction: column;
+    }
 
-    } */
 
-    /* .work-section {
+    #about-container {
+        justify-content: center;
+    }
 
-    } */
+    .profile-image {
+        margin: 2rem auto;
+    }
 
-    /* .work-card {
+    #about-text {
+        flex: 100%;
+    }
 
-    } */
+    #header-content {
+        flex-direction: row;
+        padding-top: 1rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #header-content>h1 {
+        padding-left:1rem;
+        flex: 1 1 50%
+    }
+
+    #header-content img {
+        /* height: auto; */
+        border-radius: 5px;
+        margin-left: auto;
+        flex:0 0;
+        margin-right: 1rem;
+    }
+
+    /* my intention with this is to make it a clickable "expand menu" element 
+    As I am unable to do this at the moment due to time constraints, I am leaving this note here*/
+    /* TODO make this hide/unhide the nav element - nav element to be flex-direction: column*/
+    #header-content img:hover {
+        /* height: auto; */
+        background-color: var(--background-hover);
+    }
+
+
+    nav {
+        flex: 1 0 100%;
+        /* flex-direction: column;  */
+        order: 3;
+        justify-content: center;
+     }
+
+     nav>a {
+        text-align: center;
+        font-size: smaller;
+     }
+
+
+
+
 }
