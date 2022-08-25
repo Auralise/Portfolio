@@ -17,6 +17,7 @@
     8.1. Global Element Changes
     8.2. Header/Nav Changes
     8.3. About Section Changes
+    8.4. Work Examples Changes
 9. Viewport - Mobile
     9.1. Global Element Changes
     9.2. Header/Nav Changes
@@ -216,10 +217,11 @@ p {
     margin: .5%;
     position: relative;
     overflow: hidden;
-    flex: 1 5 content;
+    flex: 1 2 33%;
     transition: var(--transition-time);
     max-height: 200px;
     background-color: #CCCCCC;
+    min-width: 250px;
 }
 
 .work-card:hover {
@@ -230,7 +232,7 @@ p {
 /* make the first one big */
 /* TODO: In the future, I may implement a flex grow change on hover for different cards */
 .work-examples .work-card:first-of-type {
-    flex: 5 1 50%;
+    flex: 2 1 60%;
 }
 
 .work-card img {
@@ -439,6 +441,12 @@ footer {
     }
 
 
+    /* ------------------ 8.4. Work Examples Changes -------------------- */
+    /* ------------------------------------------------------------------ */
+    .work-card {
+        flex-direction: column;
+        flex: 100%;
+    }
 
 
      
@@ -551,7 +559,10 @@ footer {
     .work-examples {
         padding: 1rem;
     }
-
+    .work-card {
+        flex-direction: column;
+        flex: 100%;
+    }
 
     /* --------------------- 9.5. Links/Contact Changes ------------------------- */
     /* ------------------------------------------------------------------ */
