@@ -1,7 +1,7 @@
 # Portfolio
 
 ## Purpose 
-This is a website to catalog and record my skills as a web developer as well as showcase my other projects done previously and in the future. 
+This is a website to catalog my skills as a web developer as they grow. It will also showcase other projects done both previously and in the future. 
 
 ## Built With
 - HTML5
